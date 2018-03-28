@@ -9,12 +9,12 @@ version = "0.0.1"
 with open('README.rst') as f:
     long_description = f.read()
 
-setup(name='ofxstatement-sample',
+setup(name='ofxstatement-sparkasse-freiburg',
       version=version,
-      author="Andrey Lebedev",
-      author_email="andrey@lebedev.lt",
-      url="https://github.com/kedder/ofxstatement",
-      description=("Sample plugin for ofxstatement"),
+      author="Omar Kohl",
+      author_email="omarkohl@gmail.com",
+      url="https://github.com/omarkohl/ofxstatement-sparkasse-freiburg",
+      description=("ofxstatement plugin for German bank Sparkasse Freiburg-Nördlicher Breisgau"),
       long_description=long_description,
       license="GPLv3",
       keywords=["ofx", "banking", "statement"],
