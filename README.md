@@ -25,9 +25,8 @@ It is recommended to use *virtualenv* make a clean development environment.
 ```bash
 git clone https://github.com/omarkohl/ofxstatement-sparkasse-freiburg
 cd ofxstatement-sparkasse-freiburg
-make
+make venv
 source .venv/bin/activate
-python setup.py develop
 ```
 
 This will download all the dependencies and install them into your virtual
