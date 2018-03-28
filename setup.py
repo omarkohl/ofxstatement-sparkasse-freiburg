@@ -32,7 +32,7 @@ setup(name='ofxstatement-sparkasse-freiburg',
       namespace_packages=["ofxstatement", "ofxstatement.plugins"],
       entry_points={
           'ofxstatement':
-          ['sample = ofxstatement.plugins.sample:SamplePlugin']
+          ['germany_sparkasse_freiburg = ofxstatement.plugins.germany_sparkasse_freiburg:SparkasseFreiburgPlugin']
           },
       install_requires=['ofxstatement'],
       include_package_data=True,

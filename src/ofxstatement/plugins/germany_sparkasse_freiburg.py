@@ -3,15 +3,15 @@ from ofxstatement.parser import StatementParser
 from ofxstatement.statement import StatementLine
 
 
-class SamplePlugin(Plugin):
-    """Sample plugin (for developers only)
+class SparkasseFreiburgPlugin(Plugin):
+    """Plugin for German bank Sparkasse Freiburg
     """
 
     def get_parser(self, filename):
-        return SampleParser(filename)
+        return SparkasseFreiburgParser(filename)
 
 
-class SampleParser(StatementParser):
+class SparkasseFreiburgParser(StatementParser):
     def __init__(self, filename):
         self.filename = filename
 
@@ -23,7 +23,7 @@ class SampleParser(StatementParser):
         """
         with open(self.filename, "r") as f:
             self.input = f
-            return super(SampleParser, self).parse()
+            return super(SparkasseFreiburgParser, self).parse()
 
     def split_records(self):
         """Return iterable object consisting of a line per transaction
