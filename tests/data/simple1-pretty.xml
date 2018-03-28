@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 
+OFXHEADER:100
+DATA:OFXSGML
+VERSION:102
+SECURITY:NONE
+ENCODING:UTF-8
+CHARSET:NONE
+COMPRESSION:NONE
+OLDFILEUID:NONE
+NEWFILEUID:NONE
+-->
+<OFX>
+ <SIGNONMSGSRSV1>
+  <SONRS>
+   <STATUS>
+    <CODE>
+     0
+    </CODE>
+    <SEVERITY>
+     INFO
+    </SEVERITY>
+   </STATUS>
+   <DTSERVER>
+    20180401211834
+   </DTSERVER>
+   <LANGUAGE>
+    ENG
+   </LANGUAGE>
+  </SONRS>
+ </SIGNONMSGSRSV1>
+ <BANKMSGSRSV1>
+  <STMTTRNRS>
+   <TRNUID>
+    0
+   </TRNUID>
+   <STATUS>
+    <CODE>
+     0
+    </CODE>
+    <SEVERITY>
+     INFO
+    </SEVERITY>
+   </STATUS>
+   <STMTRS>
+    <CURDEF>
+     EUR
+    </CURDEF>
+    <BANKACCTFROM>
+     <BANKID>
+      FRSPDE66XXX
+     </BANKID>
+     <ACCTID>
+      333333333
+     </ACCTID>
+     <ACCTTYPE>
+      CHECKING
+     </ACCTTYPE>
+    </BANKACCTFROM>
+    <BANKTRANLIST>
+     <DTSTART/>
+     <DTEND/>
+     <STMTTRN>
+      <TRNTYPE>
+       DEBIT
+      </TRNTYPE>
+      <DTPOSTED>
+       20180328
+      </DTPOSTED>
+      <TRNAMT>
+       -1234.56
+      </TRNAMT>
+      <FITID>
+       8030072589556266
+      </FITID>
+      <NAME>
+       ASDF Immobilien GmbH - 1234123412341 1234123412 MIETE04/18
+      </NAME>
+      <MEMO>
+       FOLGELASTSCHRIFT - IBAN: DE12341234123412341234 - BIC: ABCDABCDABC
+      </MEMO>
+     </STMTTRN>
+     <STMTTRN>
+      <TRNTYPE>
+       CREDIT
+      </TRNTYPE>
+      <DTPOSTED>
+       20180328
+      </DTPOSTED>
+      <TRNAMT>
+       123.00
+      </TRNAMT>
+      <FITID>
+       8880167378658142
+      </FITID>
+      <NAME>
+       Sabrina Mustermann - Geschenk Hans Meyer abzügl. Schulden
+      </NAME>
+      <MEMO>
+       GUTSCHRIFT - IBAN: DE12341234123412341234 - BIC: ASDFASDFASD
+      </MEMO>
+     </STMTTRN>
+    </BANKTRANLIST>
+    <LEDGERBAL>
+     <BALAMT/>
+     <DTASOF/>
+    </LEDGERBAL>
+   </STMTRS>
+  </STMTTRNRS>
+ </BANKMSGSRSV1>
+</OFX>

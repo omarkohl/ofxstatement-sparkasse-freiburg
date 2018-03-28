@@ -1,19 +1,22 @@
-PYTHON=.venv/bin/python
+VENV_NAME=.venv
+PYTHON=$(VENV_NAME)/bin/python
 
 all:
-	@echo "clean        Remove .venv"
+	@echo "clean        Remove virtualenv"
 	@echo "test         Execute tests"
-	@echo "venv         Set up .venv (dev environment)"
+	@echo "venv         Set up dev environment"
 
-PYTHON: setup.py clean
-	virtualenv -p python3 --no-site-packages .venv
+PYTHON: setup.py
+	virtualenv -p python3 --no-site-packages $(VENV_NAME)
 	$(PYTHON) setup.py develop
-	.venv/bin/pip install -r requirements_dev.txt
+	$(VENV_NAME)/bin/pip install -r requirements_dev.txt
 
 venv: PYTHON
 
 clean:
-	rm -rf .venv
+	rm -rf $(VENV_NAME)
 
-test:
-	pytest tests
+test: PYTHON
+	$(VENV_NAME)/bin/pytest \
+		--ofxstatement-bin=$(VENV_NAME)/bin/ofxstatement \
+		tests

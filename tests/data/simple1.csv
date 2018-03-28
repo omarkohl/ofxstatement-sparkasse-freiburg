@@ -1,0 +1,4 @@
+"Auftragskonto";"Buchungstag";"Valutadatum";"Buchungstext";"Verwendungszweck";"Glaeubiger ID";"Mandatsreferenz";"Kundenreferenz (End-to-End)";"Sammlerreferenz";"Lastschrift Ursprungsbetrag";"Auslagenersatz Ruecklastschrift";"Beguenstigter/Zahlungspflichtiger";"Kontonummer/IBAN";"BIC (SWIFT-Code)";"Betrag";"Waehrung";"Info"
+"12345678";"28.03.18";"03.04.18";"FOLGELASTSCHRIFT";"1234123412341 1234123412 MIETE04/18 ";"DE12ZZZ00000123412";"1234-1234123412341-12";"";"";"";"";"ASDF Immobilien GmbH";"DE12341234123412341234";"ABCDABCDABC";"-1234,56";"EUR";"Umsatz vorgemerkt"
+"12341234";"28.03.18";"28.03.18";"GUTSCHRIFT";"Geschenk Hans Meyer abzügl. Schulden";"";"";"";"";"";"";"Sabrina Mustermann";"DE12341234123412341234";"ASDFASDFASD";"123,00";"EUR";"Umsatz gebucht"
+
