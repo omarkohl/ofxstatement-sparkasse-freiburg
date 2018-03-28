@@ -1,8 +1,9 @@
 PYTHON=.venv/bin/python
 
 all:
-	@echo "venv         Set up .venv (dev environment)"
 	@echo "clean        Remove .venv"
+	@echo "test         Execute tests"
+	@echo "venv         Set up .venv (dev environment)"
 
 PYTHON: setup.py clean
 	virtualenv -p python3 --no-site-packages .venv
@@ -13,3 +14,6 @@ venv: PYTHON
 
 clean:
 	rm -rf .venv
+
+test:
+	pytest tests
