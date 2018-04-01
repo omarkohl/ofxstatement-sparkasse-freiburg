@@ -18,6 +18,44 @@ listed on the main [ofxstatement](https://github.com/kedder/ofxstatement) site.
 If your bank is missing, you can develop your own plugin.
 
 
+## Usage
+
+To use this plugin install it. For example:
+
+```bash
+pip3 install --user ofxstatement-germany-sparkasse-freiburg
+```
+
+Edit the configuration:
+
+```bash
+ofxstatement edit-config
+```
+
+Add something like this:
+
+```
+[sparkasse_freiburg]
+plugin = germany_sparkasse_freiburg
+account = 123456789
+```
+
+*account* is you bank account number (Kontonummer).
+
+Then download the CSV files (CSV-CAMT format) from you online banking account
+and convert it as follows:
+
+```bash
+ofxstatement convert -t sparkasse_freiburg EXAMPLE.csv EXAMPLE.ofx
+```
+
+The resulting .ofx file can then be imported in gnuCash or similar software.
+
+**Note:** Beware that some things (such as balance calculation) were left out
+because they are not needed by gnuCash. Open a ticket or send a pull request if
+something is missing for you use case.
+
+
 ## Setting up development environment
 
 It is recommended to use *virtualenv* make a clean development environment.
@@ -42,4 +80,12 @@ Expected output:
 The following plugins are available:
 
   germany_sparkasse_freiburg Plugin for German bank Sparkasse Freiburg
+```
+
+### Tests
+
+Execute:
+
+```bash
+make test
 ```
