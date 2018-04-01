@@ -23,7 +23,7 @@ If your bank is missing, you can develop your own plugin.
 To use this plugin install it. For example:
 
 ```bash
-pip3 install --user ofxstatement-germany-sparkasse-freiburg
+pip3 install --user ofxstatement-sparkasse-freiburg
 ```
 
 Edit the configuration:
