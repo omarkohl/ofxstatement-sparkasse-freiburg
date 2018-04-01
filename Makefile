@@ -20,3 +20,6 @@ test: PYTHON
 	$(VENV_NAME)/bin/pytest \
 		--ofxstatement-bin=$(VENV_NAME)/bin/ofxstatement \
 		tests
+
+package: PYTHON
+	$(PYTHON) setup.py sdist
