@@ -1,5 +1,10 @@
 # ofxstatement plugin for Sparkasse Freiburg-Nördlicher Breisgau
 
+[![Build Status](https://travis-ci.org/omarkohl/ofxstatement-sparkasse-freiburg.svg?branch=master)](https://travis-ci.org/omarkohl/ofxstatement-sparkasse-freiburg)
+
+[![PyPI](https://img.shields.io/pypi/v/ofxstatement-sparkasse-freiburg.svg)](https://pypi.python.org/pypi/ofxstatement-sparkasse-freiburg)
+
+
 This is an ofxstatement plugin for the German bank Sparkasse
 Freiburg-Nördlicher Breisgau (short: Sparkasse Freiburg).
 
