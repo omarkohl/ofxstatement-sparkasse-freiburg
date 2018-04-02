@@ -1,0 +1,11 @@
+# Config file for automatic testing at travis-ci.org
+
+python:
+  - 3.4
+  - 3.5
+  - 3.6
+  - 3.7
+
+install: make venv
+
+script: make test
