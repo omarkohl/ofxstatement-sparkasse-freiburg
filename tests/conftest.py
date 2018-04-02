@@ -16,6 +16,11 @@ def pytest_addoption(parser):
 
 @pytest.fixture
 def ofxstatement_bin_path(request):
+    """
+    Returns the path to the 'ofxstatement' binary. The purpose of this fixture
+    (and the command line option) is to allow running the integration tests
+    with any installed 'ofxstatement' version.
+    """
     return request.config.getoption("--ofxstatement-bin")
 
 
@@ -23,7 +28,8 @@ def ofxstatement_bin_path(request):
 def replace_config(request):
     """
     Fixture to replace the ofxstatement config file with a temporary file
-    containg a config apt for this plugin
+    containing configuration for integration tests for this plugin. At the end
+    of the test the replacement is reverted.
     """
     # Copied from 'ofxstatement' project
     APP_NAME = 'ofxstatement'
@@ -47,5 +53,6 @@ plugin = germany_sparkasse_freiburg
 account = 333333333
             """)
     yield None
+    # Cleanup (restore the original config if it existed)
     if backup_path:
         shutil.move(backup_path, config_path)

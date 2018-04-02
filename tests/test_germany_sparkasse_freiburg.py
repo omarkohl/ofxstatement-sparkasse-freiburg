@@ -49,6 +49,9 @@ def test_parse_single_record():
 
 
 def test_simple1_csv():
+    """
+    Test that the file simple1.csv is parsed correctly
+    """
     from ofxstatement.plugins.germany_sparkasse_freiburg import SparkasseFreiburgParser
     # Get data from file
     parser = SparkasseFreiburgParser(

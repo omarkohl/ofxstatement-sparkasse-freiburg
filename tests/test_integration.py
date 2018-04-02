@@ -16,9 +16,9 @@ DATA_DIR = os.path.join(
 
 # The purpose of this constant is to easily overwrite the test files when some
 # change in the expected files is required (e.g. the test data was modified or
-# the output format legitimately changes). For normal tests this must not be
-# modified!
-OVERWRITE_EXPECTED=False
+# the output format legitimately needs to change). For normal tests this should
+# not be modified!
+OVERWRITE_EXPECTED_FILES=False
 
 
 @pytest.mark.parametrize(
@@ -27,7 +27,13 @@ OVERWRITE_EXPECTED=False
     )
 def test_end2end_conversion(src_csv, ofxstatement_bin_path, tmpdir, replace_config):
     """
-    Test correct conversion of all CSV files in the 'data' directory.
+    Test correct conversion of all CSV files in the 'data' directory. This in
+    an end to end test that uses the installed 'ofxstatement' binary to
+    generate an OFX file (use the --ofxstatement-bin cmd parameter to use a
+    different binary). The OFX file is then compared with a correct version
+    available in the 'data' directory. Since OFX is just XML we also compare a
+    prettified version of both files because then it is easier to spot
+    differences should they occur.
     """
     temp_ofx = str(tmpdir / 'temp.ofx')
     temp_pretty_xml = str(tmpdir / 'temp-pretty.xml')
@@ -43,13 +49,12 @@ def test_end2end_conversion(src_csv, ofxstatement_bin_path, tmpdir, replace_conf
         temp_ofx,
         ]
     check_call(cmd)
-    print(tmpdir)
 
     with open(temp_ofx, mode='rt', encoding='utf-8') as f:
         soup = BeautifulSoup(f, 'xml')
     with open(temp_pretty_xml, mode='wt', encoding='utf-8') as f:
         f.write(soup.prettify())
-    if OVERWRITE_EXPECTED:
+    if OVERWRITE_EXPECTED_FILES:
         copyfile(temp_ofx, expected_ofx)
         copyfile(temp_pretty_xml, expected_pretty_xml)
     # Compary pretty versions so the possible differences are easier to see
