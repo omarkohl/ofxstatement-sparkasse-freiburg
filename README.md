@@ -53,12 +53,12 @@ The resulting .ofx file can then be imported in gnuCash or similar software.
 
 **Note:** Beware that some things (such as balance calculation) were left out
 because they are not needed by gnuCash. Open a ticket or send a pull request if
-something is missing for you use case.
+something is missing for your use case.
 
 
 ## Setting up development environment
 
-It is recommended to use *virtualenv* make a clean development environment.
+It is recommended to use *virtualenv* to make a clean development environment.
 
 ```bash
 git clone https://github.com/omarkohl/ofxstatement-sparkasse-freiburg
