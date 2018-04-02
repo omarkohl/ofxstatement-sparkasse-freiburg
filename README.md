@@ -102,11 +102,11 @@ make test
 Part of the tests are integration (or end to end) tests that test the complete
 conversion from CSV to OFX files. You can find these files under *tests/data* .
 Every *.csv* file is verified to be converted to the corresponding *.ofx* file.
-Additionally the *-pretty.xml* files contain a pretty versio of the resulting
+Additionally the *-pretty.xml* files contain a pretty version of the resulting
 OFX (which actually is just XML).
 
 To add a new .csv example simply include it in said directory and edit
-*tests/test_integration.py* . Set `OVERWRITE_EXPECTED_FILES` to `True` and the
+*tests/test_integration.py* . Set `OVERWRITE_EXPECTED_FILES` to `True` and then
 execute the tests. Commit the content of *tests/data* .
 
 
@@ -115,3 +115,17 @@ execute the tests. Commit the content of *tests/data* .
 In general the plugin tries to be simple and not convert any values that are
 currently not needed. If something is missing feel free to open an issue or
 even better send a pull requests.
+
+Some things which may be worth modifying:
+
+* The bank_id is currently hardcoded to Sparkasse Freiburg's BIC
+* The currency of the account is also hardcoded to EUR
+* The StatementLine.id (becomes OFX's FITID) is calculated by hashing date,
+  payee, memo and amount and then truncated. FITID should always be unique for
+  the entire account history to detect transaction duplicates.
+* OFX's NAME field (.payee in the code) is made out of the sender/receiver +
+  the subject (Verwendungszweck). This could be made configurable.
+* OFX's MEMO field (.memo in the code) is made out of Buchungstext, Kontonummer
+  and BIC.
+* trntype is currently only ever set to DEBIT or CREDIT. Using 'Buchungstext'
+  it could be improved.
