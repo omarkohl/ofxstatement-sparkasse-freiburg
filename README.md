@@ -1,9 +1,7 @@
 # ofxstatement plugin for Sparkasse Freiburg-Nördlicher Breisgau
 
 [![Build Status](https://travis-ci.org/omarkohl/ofxstatement-sparkasse-freiburg.svg?branch=master)](https://travis-ci.org/omarkohl/ofxstatement-sparkasse-freiburg)
-
 [![PyPI](https://img.shields.io/pypi/v/ofxstatement-sparkasse-freiburg.svg)](https://pypi.python.org/pypi/ofxstatement-sparkasse-freiburg)
-
 
 This is an ofxstatement plugin for the German bank Sparkasse
 Freiburg-Nördlicher Breisgau (short: Sparkasse Freiburg).
@@ -47,6 +45,10 @@ account = 123456789
 
 *account* is you bank account number (Kontonummer).
 
+Other possible settings are:
+
+* **encoding:** The encoding of the CSV file (default: iso8859-14)
+
 Then download the CSV files (CSV-CAMT format) from you online banking account
 and convert it as follows:
 
@@ -61,7 +63,7 @@ because they are not needed by gnuCash. Open a ticket or send a pull request if
 something is missing for your use case.
 
 
-## Setting up development environment
+# Development
 
 It is recommended to use *virtualenv* to make a clean development environment.
 
@@ -87,10 +89,29 @@ The following plugins are available:
   germany_sparkasse_freiburg Plugin for German bank Sparkasse Freiburg
 ```
 
-### Tests
+## Tests
 
 Execute:
 
 ```bash
 make test
 ```
+
+### Integration tests
+
+Part of the tests are integration (or end to end) tests that test the complete
+conversion from CSV to OFX files. You can find these files under *tests/data* .
+Every *.csv* file is verified to be converted to the corresponding *.ofx* file.
+Additionally the *-pretty.xml* files contain a pretty versio of the resulting
+OFX (which actually is just XML).
+
+To add a new .csv example simply include it in said directory and edit
+*tests/test_integration.py* . Set `OVERWRITE_EXPECTED_FILES` to `True` and the
+execute the tests. Commit the content of *tests/data* .
+
+
+## Improvements
+
+In general the plugin tries to be simple and not convert any values that are
+currently not needed. If something is missing feel free to open an issue or
+even better send a pull requests.
