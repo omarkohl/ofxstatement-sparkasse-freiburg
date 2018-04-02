@@ -16,6 +16,7 @@ setup(name='ofxstatement-sparkasse-freiburg',
       url="https://github.com/omarkohl/ofxstatement-sparkasse-freiburg",
       description=("ofxstatement plugin for German bank Sparkasse Freiburg-Nördlicher Breisgau"),
       long_description=long_description,
+      long_description_content_type='text/markdown',
       license="MIT",
       keywords=["ofx", "banking", "statement"],
       classifiers=[
