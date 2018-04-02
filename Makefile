@@ -30,3 +30,4 @@ test: PYTHON
 
 package: PYTHON
 	$(PYTHON) setup.py sdist
+	$(PYTHON) setup.py bdist_wheel
