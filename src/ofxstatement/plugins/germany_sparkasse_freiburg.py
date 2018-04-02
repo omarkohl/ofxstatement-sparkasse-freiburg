@@ -19,7 +19,7 @@ class SparkasseFreiburgPlugin(Plugin):
     def get_parser(self, filename):
         return SparkasseFreiburgParser(
             filename,
-            self.settings.get('encoding', 'iso8859-14'),
+            self.settings.get('encoding', 'cp1252'),
             self.settings.get('account', ''),
             )
 

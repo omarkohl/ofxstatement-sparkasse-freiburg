@@ -47,7 +47,8 @@ account = 123456789
 
 Other possible settings are:
 
-* **encoding:** The encoding of the CSV file (default: iso8859-14)
+* **encoding:** The encoding of the CSV file (default is Windows 1252 ANSI:
+  cp1252)
 
 Then download the CSV files (CSV-CAMT format) from you online banking account
 and convert it as follows:

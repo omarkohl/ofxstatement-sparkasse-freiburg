@@ -56,7 +56,7 @@ def test_simple1_csv():
     # Get data from file
     parser = SparkasseFreiburgParser(
         os.path.join(DATA_DIR, 'simple1.csv'),
-        'iso8859-14',
+        'cp1252',
         '11111111',
         )
     statement = parser.parse()
