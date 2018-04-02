@@ -2,3 +2,4 @@ appdirs
 beautifulsoup4
 lxml
 pytest
+twine
