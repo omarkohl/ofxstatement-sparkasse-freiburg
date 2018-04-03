@@ -22,7 +22,7 @@ NEWFILEUID:NONE
     </SEVERITY>
    </STATUS>
    <DTSERVER>
-    20180403074613
+    20180403220507
    </DTSERVER>
    <LANGUAGE>
     ENG
@@ -71,10 +71,10 @@ NEWFILEUID:NONE
        -1234.56
       </TRNAMT>
       <FITID>
-       1337129225674864
+       2895647853594808
       </FITID>
       <NAME>
-       ASDF Immobilien GmbH - 1234123412341 1234123412 MIETE04/18
+       1234123412341 1234123412 MIETE04/18; ASDF Immobilien GmbH
       </NAME>
       <MEMO>
        FOLGELASTSCHRIFT - IBAN: DE12341234123412341234 - BIC: ABCDABCDABC
@@ -91,10 +91,10 @@ NEWFILEUID:NONE
        123.00
       </TRNAMT>
       <FITID>
-       8880167378658142
+       4886956659599556
       </FITID>
       <NAME>
-       Sabrina Mustermann - Geschenk Hans Meyer abzügl. Schulden
+       Geschenk Hans Meyer abzügl. Schulden; Sabrina Mustermann
       </NAME>
       <MEMO>
        GUTSCHRIFT - IBAN: DE12341234123412341234 - BIC: ASDFASDFASD

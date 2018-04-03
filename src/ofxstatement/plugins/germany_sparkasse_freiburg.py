@@ -24,6 +24,12 @@ class SparkasseFreiburgPlugin(Plugin):
             )
 
 
+def _truncate_str(s):
+    s = s.strip()
+    s = ' '.join(s.split())
+    return s[:46] + '...' if len(s) > 49 else s
+
+
 class SparkasseFreiburgParser(StatementParser):
     """
     Parses CSV files as downloaded from the Sparkasse's homepage. Following
@@ -107,9 +113,13 @@ class SparkasseFreiburgParser(StatementParser):
         #
         # I prefer to have a description in .payee because that's what it ends
         # up being in gnuCash.
-        sl.payee = "{} - {}".format(
-            line['Beguenstigter/Zahlungspflichtiger'].strip(),
-            line['Verwendungszweck'].strip(),
+
+        recipient = _truncate_str(line['Beguenstigter/Zahlungspflichtiger'])
+        if not recipient:
+            recipient = 'UNBEKANNT'
+        sl.payee = "{}; {}".format(
+            _truncate_str(line['Verwendungszweck']),
+            recipient,
             )
         sl.memo = "{} - IBAN: {} - BIC: {}".format(
             line['Buchungstext'].strip(),
