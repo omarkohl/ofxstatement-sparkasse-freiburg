@@ -110,6 +110,12 @@ To add a new .csv example simply include it in said directory and edit
 *tests/test_integration.py* . Set `OVERWRITE_EXPECTED_FILES` to `True` and then
 execute the tests. Commit the content of *tests/data* .
 
+Since unfortunately the *ofxstatement* config is a global file with no option
+to pass in another path the integration tests overwrite this file before each
+test and then restore it. This is done using a *pytest* fixture. Running
+integration tests and any other *ofxstatement* operation at the same time with
+the same user on the same system is therefore a bad idea.
+
 
 ## Improvements
 
