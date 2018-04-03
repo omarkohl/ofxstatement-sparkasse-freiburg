@@ -121,7 +121,7 @@ class SparkasseFreiburgParser(StatementParser):
             _truncate_str(line['Verwendungszweck']),
             recipient,
             )
-        sl.memo = "{} - IBAN: {} - BIC: {}".format(
+        sl.memo = "{}; IBAN: {}; BIC: {}".format(
             line['Buchungstext'].strip(),
             line['Kontonummer/IBAN'].strip(),
             line['BIC (SWIFT-Code)'].strip(),
