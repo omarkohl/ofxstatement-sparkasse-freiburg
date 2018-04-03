@@ -89,7 +89,7 @@ class SparkasseFreiburgParser(StatementParser):
         else:
             sl.trntype = 'CREDIT'
         # .date: It is debatable whether to use 'Buchungstag' or 'Valutadatum'
-        sl.date = self.parse_datetime(line['Buchungstag'])
+        sl.date = self.parse_datetime(line['Valutadatum'])
         # .date_user is not contained in the original CSV
 
         # .payee becomes OFX.NAME which becomes "Description" in gnuCash

@@ -42,10 +42,10 @@ def test_parse_single_record():
     statement_line = parser.parse_record(line)
     assert statement_line.amount == Decimal('-1234.56')
     assert statement_line.trntype == 'DEBIT'
-    assert statement_line.date == datetime(2018, 3, 28, 0, 0)
+    assert statement_line.date == datetime(2018, 4, 3, 0, 0)
     assert statement_line.payee == 'ASDF Immobilien GmbH - 1234123412341 1234123412 MIETE04/18'
     assert statement_line.memo == 'FOLGELASTSCHRIFT - IBAN: DE12341234123412341234 - BIC: ABCDABCDABC'
-    assert statement_line.id == '8030072589556266'
+    assert statement_line.id == '1337129225674864'
 
 
 def test_simple1_csv():
@@ -64,7 +64,7 @@ def test_simple1_csv():
         print(l)
     expected_amounts = [Decimal('-1234.56'), Decimal('123')]
     assert expected_amounts == [l.amount for l in statement.lines]
-    expected_ids = ['8030072589556266', '8880167378658142']
+    expected_ids = ['1337129225674864', '8880167378658142']
     assert expected_ids == [l.id for l in statement.lines]
 
     assert statement.currency == 'EUR'
